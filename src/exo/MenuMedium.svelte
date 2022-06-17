@@ -1,36 +1,40 @@
-<div class="flex flex-col">
-  <!-- lg -->
-  <!-- <nav class="flex flex-col px-6 text-blue-200 bg-blue-600 md:hidden">
-    <button class="w-5"><span class="fa-solid fa-arrow-left" /></button>
-    {#each [1, 2, 3, 4, 5] as i}
-      <div class="whitespace-nowrap hover:text-white hover:cursor-pointer">
-        <span class="fa fa-address-book" /><span class="ml-3">Item {i}</span>
-      </div>
-    {/each}
-  </nav> -->
+<script>
+  let menuIndexes = [1, 2, 3, 4];
+</script>
 
-  <!-- md -->
-  <!--  <nav class="flex flex-col px-6 text-blue-200 bg-blue-600">
-    <button class="w-5"><span class="fa-solid fa-arrow-left" /></button>
-    {#each [1, 2, 3, 4, 5] as i}
-      <div
-        class="tooltip whitespace-nowrap hover:text-white hover:cursor-pointer"
-      >
-        <span class="fa fa-address-book" /><span class="tooltiptext"
-          >Item {i}</span
-        >
-      </div>
-    {/each}
-  </nav> -->
-
-  <!-- sm -->
+<div class="flex flex-col md:flex-row">
   <nav class="flex flex-col px-6 text-blue-200 bg-blue-600">
-    <button class="w-5"><span class="fa-solid fa-bars"/></button>
-    {#each [1, 2, 3, 4, 5] as i}
-      <div class="whitespace-nowrap hover:text-white hover:cursor-pointer">
-        <span class="fa fa-address-book" /><span class="ml-3">Item {i}</span>
+    <button class="text-left">
+      <div class="md:hidden">
+        <span class="fa-solid fa-bars" />
       </div>
-    {/each}
+      <div class="hidden md:block">
+        <span class="fa-solid fa-arrow-left" />
+      </div>
+    </button>
+    <div class="md:hidden">
+      {#each menuIndexes as i}
+        <div class="menuitem">
+          <span class="fa fa-address-book" /><span class="ml-3">Item {i}</span>
+        </div>
+      {/each}
+    </div>
+    <div class="hidden md:block lg:hidden">
+      {#each menuIndexes as i}
+        <div class="tooltip menuitem">
+          <span class="fa fa-address-book" /><span class="tooltiptext"
+            >Item {i}</span
+          >
+        </div>
+      {/each}
+    </div>
+    <div class="hidden lg:block">
+      {#each menuIndexes as i}
+        <div class="menuitem">
+          <span class="fa fa-address-book" /><span class="ml-3">Item {i}</span>
+        </div>
+      {/each}
+    </div>
   </nav>
 
   <section class="px-6">
@@ -42,6 +46,12 @@
 </div>
 
 <style lang="scss">
+  .menuitem {
+    @apply whitespace-nowrap;
+    &:hover {
+      @apply text-white cursor-pointer;
+    }
+  }
   .tooltip {
     @apply relative;
     $arrow_size: 6px;
