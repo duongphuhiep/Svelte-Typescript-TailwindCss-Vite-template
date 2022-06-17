@@ -12,7 +12,7 @@
         <span class="fa-solid fa-arrow-left" />
       </div>
     </button>
-    <div class="md:hidden">
+    <div class="md:hidden lg:block">
       {#each menuIndexes as i}
         <div class="menuitem">
           <span class="fa fa-address-book" /><span class="ml-3">Item {i}</span>
@@ -25,13 +25,6 @@
           <span class="fa fa-address-book" /><span class="tooltiptext"
             >Item {i}</span
           >
-        </div>
-      {/each}
-    </div>
-    <div class="hidden lg:block">
-      {#each menuIndexes as i}
-        <div class="menuitem">
-          <span class="fa fa-address-book" /><span class="ml-3">Item {i}</span>
         </div>
       {/each}
     </div>
