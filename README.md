@@ -1,6 +1,14 @@
 Source: https://github.com/omnisyle/vite-svelte-ts-tailwind
 
-# Svelte + Typescript + TailwindCSS + Vite
+# What is in the Stack
+
+* Svelte
+* Typescript
+* TailwindCSS
+* SCSS
+* Font awesome
+* i18n
+* Vite
 
 If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
 
@@ -9,3 +17,4 @@ If you have state that's important to retain within a component, consider creati
 import { writable } from 'svelte/store'
 export default writable(0)
 ```
+
