@@ -43,12 +43,7 @@
     </div>
   </nav>
 
-  <section class="px-6">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sit quaerat
-    magnam laborum sint consequatur! Obcaecati optio blanditiis accusantium
-    ipsum eum, cupiditate a accusamus repellat perferendis voluptatem culpa
-    aliquam nobis?
-  </section>
+  <slot></slot>
 </div>
 
 <style lang="scss">
